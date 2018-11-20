@@ -6,15 +6,36 @@ end
 
 post '/start_order' do
   pizza_size = params[:pizza_size]
-  pizza_meat_pepperoni = params[:pizza_meat_pepperoni]
-  pizza_meat_sausage = params[:pizza_meat_sausage]
-  pizza_meat_chicken = params[:pizza_meat_chicken]
+  if params[:pizza_meat]
+    pizza_meat = params[:pizza_meat].join
+  else
+    pizza_meat = ""
+  end
   pizza_cheese = params[:pizza_cheese]
-  pizza_veggies_mushrooms = params[:pizza_veggies]
-  pizza_veggies_peppers = params[:pizza_veggies_peppers]
-  pizza_veggies_mushrooms = params[:pizza_veggies_mushrooms]
+  if params[:pizza_veggies]
+    pizza_veggies = params[:pizza_veggies].join
+  else
+    pizza_veggies = ""
+  end
   pizza_crust = params[:pizza_crust]
   pizza_sauce = params[:pizza_sauce]
-  p "Pizza size is #{pizza_size}"
-  p "Meats are #{pizza_meat_pepperoni} #{pizza_meat_sausage} #{pizza_meat_chicken}"
+  redirect '/finalize?pizza_size=' + pizza_size + 'pizza_meat=' + pizza_meat + 'pizza_cheese=' + pizza_cheese + 'pizza_veggies=' + pizza_veggies + 'pizza_crust=' + pizza_crust + 'pizza_sauce=' + pizza_sauce
+end
+
+get '/finalize' do
+  pizza_size = params[:pizza_size]
+  if params[:pizza_meat]
+    pizza_meat = params[:pizza_meat].join
+  else
+    pizza_meat = ""
+  end
+  pizza_cheese = params[:pizza_cheese]
+  if params[:pizza_veggies]
+    pizza_veggies = params[:pizza_veggies].join
+  else
+    pizza_veggies = ""
+  end
+  pizza_crust = params[:pizza_crust]
+  pizza_sauce = params[:pizza_sauce]
+  erb :finalize
 end
