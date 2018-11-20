@@ -1,27 +1,58 @@
 <form class="" action="/start_order" method="post">
-  <h1>Please Select your ingredients</h1>
+  <h2>Please Select your ingredients</h2>
 
   <div class="size">
     <img src="https://placeimg.com/250/200/any">
     <div class="">
-      <input type="radio" name="pizza_size">Small</input>
+      <input type="radio" name="pizza_size" checked>Small</input>
       <input type="radio" name="pizza_size">Medium</input>
       <input type="radio" name="pizza_size">Large</input>
     </div>
   </div>
+
   <div class="meats">
     <img src="https://placeimg.com/250/200/any">
+    <div class="">
+      <input type="checkbox" name="pizza_meat_pepperoni">Pepperoni</input>
+      <input type="checkbox" name="pizza_meat_sausage">Sausage</input>
+      <input type="checkbox" name="pizza_meat_chicken">Chicken</input>
+    </div>
   </div>
+
   <div class="cheese">
     <img src="https://placeimg.com/250/200/any">
+    <div class="">
+      <input type="radio" name="pizza_cheese" checked>Reqular</input>
+      <input type="radio" name="pizza_cheese">3 Cheese</input>
+    </div>
   </div>
+
   <div class="veggies">
     <img src="https://placeimg.com/250/200/any">
+    <div class="">
+      <input type="checkbox" name="pizza_veggies_mushrooms">Mushrooms</input>
+      <input type="checkbox" name="pizza_veggies_peppers">Peppers</input>
+      <input type="checkbox" name="pizza_veggies_olives">Olives</input>
+    </div>
   </div>
-  <div class="sauce">
-    <img src="https://placeimg.com/250/200/any">
-  </div>
+
   <div class="crust">
     <img src="https://placeimg.com/250/200/any">
+    <div class="">
+      <input type="checkbox" name="pizza_crust" checked>Regular</input>
+      <input type="checkbox" name="pizza_crust">Thin Crust</input>
+    </div>
   </div>
+
+  <div class="sauce">
+    <img src="https://placeimg.com/250/200/any">
+    <div class="">
+      <input type="checkbox" name="pizza_sauce" checked>Pizza Sauce</input>
+      <input type="checkbox" name="pizza_sauce">BBQ</input>
+      <input type="checkbox" name="pizza_sauce">Ranch</input>
+    </div>
+  </div>
+
+<input type="submit" value="Continue">
+
 </form>
