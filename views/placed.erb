@@ -2,9 +2,13 @@
 
 <ul>
   <% ingredients_array.each do |ingredient|%>
+    <% if ingredient == "small" || ingredient == "medium" || ingredient == "large"%>
+      <br>
+    <% end%>
     <li><%= ingredient%></li>
   <% end%>
-  <li>$<%= price%>.00</li>
+  <br>
+  <li>Total is $<%= price%>.00</li>
 </ul>
 
 <% if delivery_location%>

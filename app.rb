@@ -2,10 +2,12 @@ require 'sinatra'
 require_relative 'pizza_price.rb'
 
 get '/' do
-  erb :home
+  params[:ingredients_array] ? ingredients_array = params[:ingredients_array] : ingredients_array = ""
+  erb :home, locals: {ingredients_array: ingredients_array}
 end
 
 post '/start_order' do
+  ingredients_array = params[:ingredients_array]
   pizza_size = params[:pizza_size]
   if params[:pizza_meat]
     pizza_meat = params[:pizza_meat].join(',')
@@ -20,11 +22,12 @@ post '/start_order' do
   end
   pizza_crust = params[:pizza_crust]
   pizza_sauce = params[:pizza_sauce]
-  redirect '/finalize?pizza_size=' + pizza_size + '&pizza_meat=' + pizza_meat + '&pizza_cheese=' + pizza_cheese + '&pizza_veggies=' + pizza_veggies + '&pizza_crust=' + pizza_crust + '&pizza_sauce=' + pizza_sauce
+  redirect '/finalize?pizza_size=' + pizza_size + '&pizza_meat=' + pizza_meat + '&pizza_cheese=' + pizza_cheese + '&pizza_veggies=' + pizza_veggies + '&pizza_crust=' + pizza_crust + '&pizza_sauce=' + pizza_sauce + '&ingredients_array=' + ingredients_array
 end
 
 get '/finalize' do
   pizza_size = params[:pizza_size]
+  ingredients_array = params[:ingredients_array]
   if params[:pizza_meat]
     pizza_meat = params[:pizza_meat].split(",")
   else
@@ -38,6 +41,7 @@ get '/finalize' do
   end
   pizza_crust = params[:pizza_crust]
   pizza_sauce = params[:pizza_sauce]
+  ingredients_array = params[:ingredients_array]
   all_ingredients = Array.new
   all_ingredients << pizza_size
   all_ingredients << pizza_meat
@@ -46,13 +50,17 @@ get '/finalize' do
   all_ingredients << pizza_crust
   all_ingredients << pizza_sauce
   all_ingredients = all_ingredients.reject {|x| x.empty?}
-  erb :finalize, locals: {all_ingredients: all_ingredients}
+  erb :finalize, locals: {all_ingredients: all_ingredients, ingredients_array: ingredients_array}
 end
 
 post '/checkout' do
   all_ingredients = params[:all_ingredients].split(",")
-  ingredients_array = Array.new
-    p params
+  ingredients_array = params[:ingredients_array]
+  if ingredients_array == ''
+    ingredients_array = Array.new
+  else
+    ingredients_array = ingredients_array.split(',')
+  end
   all_ingredients.each do |ingredient|
     if (ingredient == "pepperoni" || ingredient == "sausage" || ingredient == "chicken" || ingredient == "mushrooms" || ingredient == "peppers" || ingredient == "olives") && (params[ingredient.to_sym] == "no")
       p "On the meats"
@@ -67,8 +75,11 @@ post '/checkout' do
       ingredients_array << ingredient
     end
   end
+  p ingredients_array
   ingredients_array = ingredients_array.join(",")
-  if params[:pickup_delivery] == "pickup"
+  if params[:pickup_delivery] == "new_pizza"
+    redirect '/?ingredients_array=' + ingredients_array
+  elsif params[:pickup_delivery] == "pickup"
     redirect '/placed?ingredients_array=' + ingredients_array
   else
     redirect '/address?ingredients_array=' + ingredients_array
@@ -89,6 +100,6 @@ post '/address' do
 get '/placed' do
   ingredients_array = params[:ingredients_array].split(',')
   delivery_location = params[:delivery_location]
-  price = pizza_price(ingredients_array.length, ingredients_array[0])
+  price = pizza_price(ingredients_array.length, ingredients_array)
   erb :placed, locals: {ingredients_array: ingredients_array, delivery_location: delivery_location, price: price}
 end
