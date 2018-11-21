@@ -1,0 +1,12 @@
+<h2>Your Pizza</h2>
+
+<ul>
+  <% ingredients_array.each do |ingredient|%>
+    <li><%= ingredient%></li>
+  <% end%>
+</ul>
+
+<% if delivery_location%>
+  <h2>Delivered to</h2>
+  <%= delivery_location%>
+<% end%>

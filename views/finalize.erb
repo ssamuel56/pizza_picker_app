@@ -1,12 +1,45 @@
-<form class="" action="index.html" method="post">
+<form class="" action="/checkout" method="post">
 
-<% all_ingredients.each do |ingredient|%>
+  <h2>Your Pizza</h2>
   <div class="">
-    <img src="https://placeimg.com/250/200/any">
-    <div class="<%= ingredient%>">
-      <%= ingredient%>
+      <%= all_ingredients[0]%>
+    <div class="size">
+      <img src="https://placeimg.com/250/200/any">
     </div>
   </div>
-<% end %>"
+
+
+<% all_ingredients[1..5].each do |ingredient|%>
+    <% if ingredient.class == Array%>
+      <div class="">
+      <% ingredient.each do |individual|%>
+        <%= individual%>
+      <% end%><br>
+      <% ingredient.each do |individual|%>
+        <img src="https://placeimg.com/250/200/any">
+      <% end%><br>
+      <% ingredient.each do |individual|%>
+        Do you want to keep <%= individual%> ?
+        Yes<input type="radio" name="<%= individual%>" value="yes" checked>
+        No<input type="radio" name="<%= individual%>" value="no">
+      <% end%>
+      </div>
+      <% else%>
+      <div class="">
+        <%= ingredient%><br>
+        <img src="https://placeimg.com/250/200/any"><br>
+        <% unless ingredient == "regular_cheese" || ingredient == "pan_crust" || ingredient == "pizza_sauce"%>
+        Do you want to keep <%= ingredient%>?
+        Yes<input type="radio" name="<%= ingredient%>" value="yes" checked>
+        No<input type="radio" name="<%= ingredient%>" value="no">
+        <% end%>
+        </div>
+    <% end%>
+<% end %>
+
+  Pickup<input type="radio" name="pickup_delivery" value="pickup" checked>
+  Delivery<input type="radio" name="pickup_delivery" value="delivery">
+  <input type="hidden" name="all_ingredients" value="<%= all_ingredients.join(",")%>">
+  <input type="submit" value="Check Out">
 
 </form>
