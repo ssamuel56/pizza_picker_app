@@ -49,8 +49,8 @@
     <% end%>
 <% end %>
 
-  Pickup<input type="radio" name="pickup_delivery" value="pickup" checked>
-  Delivery<input type="radio" name="pickup_delivery" value="delivery">
+  <h2>Pickup<input type="radio" name="pickup_delivery" value="pickup" checked></h2>
+  <h2>Delivery<input type="radio" name="pickup_delivery" value="delivery"></h2>
   <input type="hidden" name="all_ingredients" value="<%= all_ingredients.join(",")%>"><br><br>
   <input class="submit" type="submit" value="Check Out">
   <input class="submit" type="button" onclick="window.location.href='/'" value="Reset">
