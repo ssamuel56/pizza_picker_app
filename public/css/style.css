@@ -10,18 +10,65 @@ body{
   padding-bottom: 10em;
 }
 
-img {
+#main-header{
+  background: red;
+  color: black;
+  float: center;
+  word-spacing: 1em;
+  letter-spacing: .55em;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  font-size: 2.4em;
+  box-shadow: 10px 5px linear-gradient(bottom, black, red);
+}
+
+form > div > div > img {
   width: 200px;
   height: 150px;
+}
+form > div > div> div > img {
+  width: 200px;
+  height: 150px;
+}
+
+#main-header img {
+  width: 75px;
+  height: 50px;
+  float: left;
+}
+
+#main-header img:hover {
+  cursor: pointer;
 }
 
 .ingredient3 {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-column-gap: none;
 }
 
 .ingredient2 {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.submit {
+  font-size: 20px;
+  background-color: black;
+  color: white
+}
+
+.submit:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+form > div > div > input {
+  background-color: red;
+  height: 15px;
+  width: 15px;
+}
+
+form > div > div > input:hover {
+  cursor: pointer;
 }

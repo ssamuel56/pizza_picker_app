@@ -55,7 +55,7 @@ post '/checkout' do
     p params
   all_ingredients.each do |ingredient|
     if (ingredient == "pepperoni" || ingredient == "sausage" || ingredient == "chicken" || ingredient == "mushrooms" || ingredient == "peppers" || ingredient == "olives") && (params[ingredient.to_sym] == "no")
-      return true
+      p "On the meats"
     elsif (ingredient == "thin_crust") && (params[ingredient.to_sym] == "no")
       ingredients_array << "pan_crust"
     elsif (ingredient == "bbq" || ingredient == "ranch") && (params[ingredient.to_sym] == "no")

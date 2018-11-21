@@ -2,36 +2,48 @@
 
   <h2>Your Pizza</h2>
   <div class="">
-      <%= all_ingredients[0]%>
+      <h2><%= all_ingredients[0]%></h2>
     <div class="size">
-      <img src="https://placeimg.com/250/200/any">
+      <img src="<%="/pics/#{all_ingredients[0]}.jpg"%>">
     </div>
   </div>
 
 
 <% all_ingredients[1..5].each do |ingredient|%>
     <% if ingredient.class == Array%>
-      <div class="">
-      <% ingredient.each do |individual|%>
-        <%= individual%>
-      <% end%><br>
-      <% ingredient.each do |individual|%>
-        <img src="https://placeimg.com/250/200/any">
-      <% end%><br>
-      <% ingredient.each do |individual|%>
-        Do you want to keep <%= individual%> ?
-        Yes<input type="radio" name="<%= individual%>" value="yes" checked>
-        No<input type="radio" name="<%= individual%>" value="no">
-      <% end%>
-      </div>
+      <div class="ingredient<%= ingredient.length%>">
+          <% ingredient.each do |individual|%>
+          <div class="">
+            <h2><%= individual%></h2>
+          </div>
+          <% end%>
+          <% ingredient.each do |individual|%>
+          <div class="size">
+            <img src="<%="/pics/#{individual}.jpg"%>" alt="">
+          </div>
+          <% end%>
+          <% ingredient.each do |individual|%>
+          <div class="">
+            Do you want to keep <%= individual%> ? <br>
+            Yes<input type="radio" name="<%= individual%>" value="yes" checked>
+            No<input type="radio" name="<%= individual%>" value="no">
+          </div>
+        <% end%><br>
+        </div>
       <% else%>
+      <div>
       <div class="">
-        <%= ingredient%><br>
-        <img src="https://placeimg.com/250/200/any"><br>
+        <h2><%= ingredient%></h2>
+      </div>
+      <div>
+        <img src="<%="/pics/#{ingredient}.jpg"%>"><br>
+      </div>
         <% unless ingredient == "regular_cheese" || ingredient == "pan_crust" || ingredient == "pizza_sauce"%>
+        <div class="">
         Do you want to keep <%= ingredient%>?
         Yes<input type="radio" name="<%= ingredient%>" value="yes" checked>
         No<input type="radio" name="<%= ingredient%>" value="no">
+        </div>
         <% end%>
         </div>
     <% end%>
@@ -39,7 +51,8 @@
 
   Pickup<input type="radio" name="pickup_delivery" value="pickup" checked>
   Delivery<input type="radio" name="pickup_delivery" value="delivery">
-  <input type="hidden" name="all_ingredients" value="<%= all_ingredients.join(",")%>">
-  <input type="submit" value="Check Out">
+  <input type="hidden" name="all_ingredients" value="<%= all_ingredients.join(",")%>"><br><br>
+  <input class="submit" type="submit" value="Check Out">
+  <input class="submit" type="button" onclick="window.location.href='/'" value="Reset">
 
 </form>
