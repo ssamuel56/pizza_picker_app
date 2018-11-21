@@ -43,7 +43,7 @@ label > img{
   float: left;
 }
 
-#main-header img.:hover {
+#main-header img:hover {
   cursor: pointer;
 }
 
