@@ -68,7 +68,7 @@ post '/checkout' do
       ingredients_array << "pan_crust"
     elsif (ingredient == "bbq" || ingredient == "ranch") && (params[ingredient.to_sym] == "no")
       ingredients_array << "regular_sauce"
-    elsif (ingredient == "cheese3") && (params[ingredient.to_sym] == "no")
+    elsif (ingredient == "3_cheese") && (params[ingredient.to_sym] == "no")
       p "on the cheese"
       ingredients_array << "regular_cheese"
     else
