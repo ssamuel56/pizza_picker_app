@@ -14,7 +14,7 @@
       <div class="ingredient<%= ingredient.length%>">
           <% ingredient.each do |individual|%>
           <div class="">
-            <h2><%= individual%></h2>
+            <h2><%= individual.gsub("_", " ")%></h2>
           </div>
           <% end%>
           <% ingredient.each do |individual|%>
@@ -24,7 +24,7 @@
           <% end%>
           <% ingredient.each do |individual|%>
           <div class="">
-            Do you want to keep <%= individual%> ? <br>
+            Do you want to keep <%= individual.gsub("_", " ")%> ? <br>
             Yes<input type="radio" name="<%= individual%>" value="yes" checked>
             No<input type="radio" name="<%= individual%>" value="no">
           </div>
@@ -33,14 +33,14 @@
       <% else%>
       <div>
       <div class="">
-        <h2><%= ingredient%></h2>
+        <h2><%= ingredient.gsub("_", " ")%></h2>
       </div>
       <div>
         <img src="<%="/pics/#{ingredient}.jpg"%>"><br>
       </div>
         <% unless ingredient == "regular_cheese" || ingredient == "pan_crust" || ingredient == "pizza_sauce"%>
         <div class="">
-        Do you want to keep <%= ingredient%>?
+        Do you want to keep <%= ingredient.gsub("_", " ")%>?
         Yes<input type="radio" name="<%= ingredient%>" value="yes" checked>
         No<input type="radio" name="<%= ingredient%>" value="no">
         </div>

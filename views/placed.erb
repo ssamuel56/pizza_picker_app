@@ -5,7 +5,7 @@
     <% if ingredient == "small" || ingredient == "medium" || ingredient == "large"%>
       <br>
     <% end%>
-    <li><%= ingredient%></li>
+    <li><%= ingredient.gsub("_", " ")%></li>
   <% end%>
   <br>
   <li>Total is $<%= price%>.00</li>
