@@ -4,22 +4,28 @@
 <form class="" action="/start_order" method="post">
   <div class="ingredient3">
     <div class="">
-      <img src="/pics/small.jpg">
+      <label for="small">
+        <img src="/pics/small.jpg">
+      </label>
     </div>
     <div class="">
-      <img src="/pics/medium.jpg">
+      <label for="medium">
+        <img src="/pics/medium.jpg">
+      </label>
     </div>
     <div class="">
-      <img src="/pics/large.jpg">
+      <label for="large">
+        <img src="/pics/large.jpg">
+      </label>
     </div>
     <div class="">
-      <input type="radio" name="pizza_size" value="small" checked>Small</input>
+      <input id="small" type="radio" name="pizza_size" value="small" checked>Small</input>
     </div>
     <div class="">
-      <input type="radio" name="pizza_size" value="medium">Medium</input>
+      <input id="medium" type="radio" name="pizza_size" value="medium">Medium</input>
     </div>
     <div class="">
-      <input type="radio" name="pizza_size" value="large">Large</input>
+      <input id="large" type="radio" name="pizza_size" value="large">Large</input>
     </div>
   </div>
   <br>
@@ -27,22 +33,28 @@
   <h2>Meat</h2>
   <div class="ingredient3">
     <div class="">
-      <img src="/pics/pepperoni.jpg">
+      <label for="pepperoni">
+        <img src="/pics/pepperoni.jpg">
+      </label>
     </div>
     <div class="">
-      <img src="/pics/sausage.jpg">
+      <label for="sausage">
+        <img src="/pics/sausage.jpg">
+      </label>
     </div>
     <div class="">
-      <img src="/pics/chicken.jpg">
+      <label for="chicken">
+        <img src="/pics/chicken.jpg">
+      </label>
     </div>
     <div class="">
-      <input type="checkbox" name="pizza_meat[]" value="pepperoni">Pepperoni</input>
+      <input id="pepperoni" type="checkbox" name="pizza_meat[]" value="pepperoni">Pepperoni</input>
     </div>
     <div class="">
-      <input type="checkbox" name="pizza_meat[]" value="sausage">Sausage</input>
+      <input id="sausage" type="checkbox" name="pizza_meat[]" value="sausage">Sausage</input>
     </div>
     <div class="">
-      <input type="checkbox" name="pizza_meat[]" value="chicken">Chicken</input>
+      <input id="chicken" type="checkbox" name="pizza_meat[]" value="chicken">Chicken</input>
     </div>
   </div>
   <br>
@@ -50,16 +62,20 @@
   <h2>Cheese</h2>
   <div class="ingredient2">
     <div class="item1">
-      <img src="/pics/regular_cheese.jpg">
+      <label for="regular">
+        <img src="/pics/regular_cheese.jpg">
+      </label>
     </div>
     <div class="item2">
-      <img src="/pics/cheese3.jpg">
+      <label for="cheese3">
+        <img src="/pics/cheese3.jpg">
+      </label>
     </div>
     <div>
-      <input type="radio" name="pizza_cheese" value="regular_cheese" checked>Reqular Cheese</input>
+      <input id="regular" type="radio" name="pizza_cheese" value="regular_cheese" checked>Reqular Cheese</input>
     </div>
     <div>
-      <input type="radio" name="pizza_cheese" value="cheese3">3 Cheese</input>
+      <input id="cheese3" type="radio" name="pizza_cheese" value="cheese3">3 Cheese</input>
     </div>
   </div>
   <br>
@@ -67,22 +83,28 @@
   <h2>Veggies</h2>
   <div class="ingredient3">
     <div class="">
+      <label for="mushrooms">
       <img src="/pics/mushrooms.jpg">
+      </label>
     </div>
     <div class="">
+      <label for="peppers">
       <img src="/pics/peppers.jpg">
+      </label>
     </div>
     <div class="">
+      <label for="olives">
       <img src="/pics/olives.jpg">
+      </label>
     </div>
     <div class="">
-      <input type="checkbox" name="pizza_veggies[]" value="mushrooms">Mushrooms</input>
+      <input id="mushrooms" type="checkbox" name="pizza_veggies[]" value="mushrooms">Mushrooms</input>
     </div>
     <div class="">
-      <input type="checkbox" name="pizza_veggies[]" value="peppers">Peppers</input>
+      <input id="peppers" type="checkbox" name="pizza_veggies[]" value="peppers">Peppers</input>
     </div>
     <div class="">
-      <input type="checkbox" name="pizza_veggies[]" value="olives">Olives</input>
+      <input id="olives" type="checkbox" name="pizza_veggies[]" value="olives">Olives</input>
     </div>
   </div>
   <br>
@@ -90,16 +112,20 @@
   <h2>Crust</h2>
   <div class="ingredient2">
     <div>
-      <img src="/pics/pan_crust.jpg">
+      <label for="pan">
+        <img src="/pics/pan_crust.jpg">
+      </label>
     </div>
     <div class="">
+      <label for="thin">
       <img src="/pics/thin.jpg">
+      </label>
     </div>
     <div class="">
-      <input type="radio" name="pizza_crust" value="pan_crust" checked>Pan Crust</input>
+      <input id="pan" type="radio" name="pizza_crust" value="pan_crust" checked>Pan Crust</input>
     </div>
     <div>
-      <input type="radio" name="pizza_crust" value="thin">Thin Crust</input>
+      <input id="thin" type="radio" name="pizza_crust" value="thin">Thin Crust</input>
     </div>
   </div>
   <br>
@@ -107,22 +133,28 @@
   <h2>Sauce</h2>
   <div class="ingredient3">
     <div>
-      <img src="/pics/pizza_sauce.jpg">
+      <label for="sauce">
+        <img name="pizza_sauce" src="/pics/pizza_sauce.jpg">
+      </label>
     </div>
     <div>
+      <label for="bbq">
       <img src="/pics/bbq.jpg">
+      </label>
     </div>
     <div>
+      <label for="ranch">
       <img src="/pics/ranch.jpg">
+      </label>
     </div>
     <div>
-      <input type="radio" name="pizza_sauce" value="pizza_sauce" checked>Pizza Sauce</input>
+      <input id="sauce" type="radio" name="pizza_sauce" value="pizza_sauce" checked>Pizza Sauce</input>
     </div>
     <div>
-      <input type="radio" name="pizza_sauce" value="bbq">BBQ</input>
+      <input id="bbq" type="radio" name="pizza_sauce" value="bbq">BBQ</input>
     </div>
     <div>
-      <input type="radio" name="pizza_sauce" value="ranch">Ranch</input>
+      <input id="ranch" type="radio" name="pizza_sauce" value="ranch">Ranch</input>
     </div>
   </div>
   <br><br>

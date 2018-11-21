@@ -32,6 +32,11 @@ form > div > div> div > img {
   height: 150px;
 }
 
+form > div > div > label > img{
+  width: 200px;
+  height: 150px;
+}
+
 #main-header img {
   width: 75px;
   height: 50px;
