@@ -18,8 +18,8 @@
           </div>
           <% end%>
           <% ingredient.each do |individual|%>
-          <div class="size">
-            <input src="<%="/pics/#{individual}.jpg"%>" alt="">
+          <div class="">
+            <img src="<%="/pics/#{individual}.jpg"%>">
           </div>
           <% end%>
           <% ingredient.each do |individual|%>
@@ -28,7 +28,7 @@
             Yes<input type="radio" name="<%= individual%>" value="yes" checked>
             No<input type="radio" name="<%= individual%>" value="no">
           </div>
-        <% end%><br>
+        <% end%>
         </div>
       <% else%>
       <div>
