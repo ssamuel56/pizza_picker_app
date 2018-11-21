@@ -1,57 +1,131 @@
-<form class="" action="/start_order" method="post">
-  <h2>Please Select your ingredients</h2>
+<h1>Please Select your ingredients</h1>
 
-  <div class="size">
-    <img src="https://placeimg.com/250/200/any">
+<h2>Size</h2>
+<form class="" action="/start_order" method="post">
+  <div class="ingredient3">
+    <div class="">
+      <img src="/pics/small.jpg">
+    </div>
+    <div class="">
+      <img src="/pics/medium.jpg">
+    </div>
+    <div class="">
+      <img src="/pics/large.jpg">
+    </div>
     <div class="">
       <input type="radio" name="pizza_size" value="small" checked>Small</input>
+    </div>
+    <div class="">
       <input type="radio" name="pizza_size" value="medium">Medium</input>
+    </div>
+    <div class="">
       <input type="radio" name="pizza_size" value="large">Large</input>
     </div>
   </div>
+  <br>
 
-  <div class="meats">
-    <img src="https://placeimg.com/250/200/any">
+  <h2>Meat</h2>
+  <div class="ingredient3">
+    <div class="">
+      <img src="/pics/pepperoni.jpg">
+    </div>
+    <div class="">
+      <img src="/pics/sausage.jpg">
+    </div>
+    <div class="">
+      <img src="/pics/chicken.jpg">
+    </div>
     <div class="">
       <input type="checkbox" name="pizza_meat[]" value="pepperoni">Pepperoni</input>
+    </div>
+    <div class="">
       <input type="checkbox" name="pizza_meat[]" value="sausage">Sausage</input>
+    </div>
+    <div class="">
       <input type="checkbox" name="pizza_meat[]" value="chicken">Chicken</input>
     </div>
   </div>
+  <br>
 
-  <div class="cheese">
-    <img src="https://placeimg.com/250/200/any">
-    <div class="">
+  <h2>Cheese</h2>
+  <div class="ingredient2">
+    <div class="item1">
+      <img src="/pics/regular_cheese.jpg">
+    </div>
+    <div class="item2">
+      <img src="/pics/cheese3.jpg">
+    </div>
+    <div>
       <input type="radio" name="pizza_cheese" value="regular_cheese" checked>Reqular Cheese</input>
+    </div>
+    <div>
       <input type="radio" name="pizza_cheese" value="cheese3">3 Cheese</input>
     </div>
   </div>
+  <br>
 
-  <div class="veggies">
-    <img src="https://placeimg.com/250/200/any">
+  <h2>Veggies</h2>
+  <div class="ingredient3">
+    <div class="">
+      <img src="/pics/mushrooms.jpg">
+    </div>
+    <div class="">
+      <img src="/pics/peppers.jpg">
+    </div>
+    <div class="">
+      <img src="/pics/olives.jpg">
+    </div>
     <div class="">
       <input type="checkbox" name="pizza_veggies[]" value="mushrooms">Mushrooms</input>
+    </div>
+    <div class="">
       <input type="checkbox" name="pizza_veggies[]" value="peppers">Peppers</input>
+    </div>
+    <div class="">
       <input type="checkbox" name="pizza_veggies[]" value="olives">Olives</input>
     </div>
   </div>
+  <br>
 
-  <div class="crust">
-    <img src="https://placeimg.com/250/200/any">
+  <h2>Crust</h2>
+  <div class="ingredient2">
+    <div>
+      <img src="/pics/pan_crust.jpg">
+    </div>
+    <div class="">
+      <img src="/pics/thin.jpg">
+    </div>
     <div class="">
       <input type="radio" name="pizza_crust" value="pan_crust" checked>Pan Crust</input>
+    </div>
+    <div>
       <input type="radio" name="pizza_crust" value="thin">Thin Crust</input>
     </div>
   </div>
+  <br>
 
-  <div class="sauce">
-    <img src="https://placeimg.com/250/200/any">
-    <div class="">
+  <h2>Sauce</h2>
+  <div class="ingredient3">
+    <div>
+      <img src="/pics/pizza_sauce.jpg">
+    </div>
+    <div>
+      <img src="/pics/bbq.jpg">
+    </div>
+    <div>
+      <img src="/pics/ranch.jpg">
+    </div>
+    <div>
       <input type="radio" name="pizza_sauce" value="pizza_sauce" checked>Pizza Sauce</input>
+    </div>
+    <div>
       <input type="radio" name="pizza_sauce" value="bbq">BBQ</input>
+    </div>
+    <div>
       <input type="radio" name="pizza_sauce" value="ranch">Ranch</input>
     </div>
   </div>
+  <br>
 
 <input type="submit" value="Continue">
 

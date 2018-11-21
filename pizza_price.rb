@@ -7,4 +7,5 @@ def pizza_price(length, size)
   else size == "large"
     price += 10 + length
   end
+  return price
 end

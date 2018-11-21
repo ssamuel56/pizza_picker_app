@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative 'pizza_picker.rb'
+require_relative 'pizza_price.rb'
 
 get '/' do
   erb :home
@@ -55,7 +55,7 @@ post '/checkout' do
     p params
   all_ingredients.each do |ingredient|
     if (ingredient == "pepperoni" || ingredient == "sausage" || ingredient == "chicken" || ingredient == "mushrooms" || ingredient == "peppers" || ingredient == "olives") && (params[ingredient.to_sym] == "no")
-      p "on the meats"
+      return true
     elsif (ingredient == "thin_crust") && (params[ingredient.to_sym] == "no")
       ingredients_array << "pan_crust"
     elsif (ingredient == "bbq" || ingredient == "ranch") && (params[ingredient.to_sym] == "no")
@@ -89,5 +89,6 @@ post '/address' do
 get '/placed' do
   ingredients_array = params[:ingredients_array].split(',')
   delivery_location = params[:delivery_location]
-  erb :placed, locals: {ingredients_array: ingredients_array, delivery_location: delivery_location}
+  price = pizza_price(ingredients_array.length, ingredients_array[0])
+  erb :placed, locals: {ingredients_array: ingredients_array, delivery_location: delivery_location, price: price}
 end
