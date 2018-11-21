@@ -3,6 +3,11 @@ require_relative 'pizza_price.rb'
 
 class Pizza < Minitest::Test
   def test_to_make_one_small
-    assert_equal(5, pizza_price(5, size))
-  end  
+    size = "small"
+    assert_equal(10, pizza_price(5, size))
+  end
+  def test_to_make_one_medium
+    size = "medium"
+    assert_equal(10, pizza_price(7, size))
+  end
 end
