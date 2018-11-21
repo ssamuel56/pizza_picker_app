@@ -1,4 +1,5 @@
 require 'sinatra'
+require_relative 'pizza_picker.rb'
 
 get '/' do
   erb :home
