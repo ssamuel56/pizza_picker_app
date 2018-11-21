@@ -49,10 +49,12 @@
     <% end%>
 <% end %>
 
-  <h2 class="delivery">Pickup<input type="radio" name="pickup_delivery" value="pickup" checked></h2>
-  <h2 class="delivery">Delivery<input type="radio" name="pickup_delivery" value="delivery"></h2>
-  <input type="hidden" name="all_ingredients" value="<%= all_ingredients.join(",")%>"><br><br>
-  <input class="submit" type="submit" value="Check Out">
-  <input class="submit" type="button" onclick="window.location.href='/'" value="Reset">
+  <div class="delivery-container">
+    <h2 class="delivery"><label for="pickup">Pickup</label><input id="pickup" type="radio" name="pickup_delivery" value="pickup" checked></h2>
+    <h2 class="delivery"><label for="delivery">Delivery</label><input id="delivery" type="radio" name="pickup_delivery" value="delivery"></h2>
+    </div>
+    <input type="hidden" name="all_ingredients" value="<%= all_ingredients.join(",")%>"><br><br>
+    <input class="submit" type="submit" value="Check Out">
+    <input class="submit" type="button" onclick="window.location.href='/'" value="Reset">
 
 </form>

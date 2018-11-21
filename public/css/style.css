@@ -68,6 +68,17 @@ label > img{
   cursor: pointer;
 }
 
+.delivery-container{
+  content: center;
+  width: 20%;
+  margin: auto;
+  text-align: center;
+}
+
+.delivery{
+  border-style: double;
+  border-width: medium;
+}
 form > div > div > input {
   background-color: red;
   height: 15px;
