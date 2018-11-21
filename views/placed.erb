@@ -10,10 +10,11 @@
   <br>
   <li>Total is $<%= price%>.00</li>
 </ul>
-
-<% if delivery_location%>
-  <h2>Delivered to</h2>
-  <%= delivery_location%>
-<% end%>
-
+<div class="">
+  <% if delivery_location%>
+    <h2>Delivered to</h2>
+    <%= delivery_location%>
+  <% end%>
+</div>
+<br>
 <input class="submit" type="button" onclick="window.location.href='/'"value="Reset">
