@@ -88,8 +88,10 @@ li{
 }
 
 .delivery{
+  box-sizing: content-box;
   border-style: double;
   border-width: medium;
+  text-align: center;
 }
 form > div > div > input {
   background-color: red;
@@ -102,6 +104,10 @@ form > div > div > input:hover {
 }
 
 @media screen and (max-width: 1080px) {
+  body{
+    font-size: 4vw;
+  }
+
   #main-header {
     font-size: 2em;
     line-height: 1.2em;
@@ -124,6 +130,10 @@ form > div > div > input:hover {
 
   label > img{
     max-width: 100%;
+  }
+
+  .delivery {
+    border-style: solid none solid none;
   }
 
 }
