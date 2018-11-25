@@ -20,7 +20,6 @@ body{
   padding-bottom: 30px;
   font-weight: bold;
   font-size: 2.4em;
-  box-shadow: 10px 5px linear-gradient(bottom, black, red);
 }
 
 form > div > div > img {
@@ -37,6 +36,17 @@ label > img{
   height: 150px;
 }
 
+ul {
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2em;
+}
+
+li{
+
+}
+
 #main-header img {
   width: 75px;
   height: 50px;
@@ -47,14 +57,14 @@ label > img{
   cursor: pointer;
 }
 
-.ingredient3 {
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-
 .ingredient2 {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.ingredient3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 .submit {
@@ -87,4 +97,22 @@ form > div > div > input {
 
 form > div > div > input:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 1080px) {
+  #main-header {
+    font-size: 2em;
+    line-height: 1.2em;
+  }
+
+  .ingredient3 {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .ingredient2 {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
 }
