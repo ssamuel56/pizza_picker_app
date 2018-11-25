@@ -58,13 +58,15 @@ li{
 }
 
 .ingredient2 {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto auto;
+  grid-gap: 4em;
 }
 
 .ingredient3 {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto auto auto;
+  grid-gap: 4em;
 }
 
 .submit {
@@ -106,13 +108,22 @@ form > div > div > input:hover {
   }
 
   .ingredient3 {
-    display: grid;
-    grid-template-columns: auto;
+    grid-gap: 0em;
   }
 
   .ingredient2 {
-    display: grid;
-    grid-template-columns: auto;
+    grid-gap: 0em;
+  }
+
+  form > div > div > img {
+    max-width: 100%;
+  }
+  form > div > div> div > img {
+    max-width: 100%;
+  }
+
+  label > img{
+    max-width: 100%;
   }
 
 }
