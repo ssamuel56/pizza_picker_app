@@ -41,11 +41,10 @@ ul {
   list-style: none;
   justify-content: center;
   align-items: center;
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 li{
-
 }
 
 #main-header img {
@@ -94,6 +93,7 @@ li{
   border-width: medium;
   text-align: center;
 }
+
 form > div > div > input {
   background-color: red;
   height: 1vw;
