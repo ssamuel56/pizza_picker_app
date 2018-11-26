@@ -4,7 +4,7 @@ body{
   font-family: Comic Sans MS;
   line-height: 1.6em;
   margin: auto;
-  font-size: 16px;
+  font-size: 2vw;
   width: 80%;
   text-align: center;
   padding-bottom: 10em;
@@ -19,7 +19,8 @@ body{
   padding-top: 30px;
   padding-bottom: 30px;
   font-weight: bold;
-  font-size: 2.4em;
+  font-size: 1.8em;
+  line-height: 2em;
 }
 
 form > div > div > img {
@@ -95,8 +96,8 @@ li{
 }
 form > div > div > input {
   background-color: red;
-  height: 15px;
-  width: 15px;
+  height: 1vw;
+  width: 1vw;
 }
 
 form > div > div > input:hover {
@@ -109,6 +110,7 @@ form > div > div > input:hover {
   }
 
   #main-header {
+    padding-top: none;
     font-size: 2em;
     line-height: 1.2em;
   }
@@ -122,14 +124,15 @@ form > div > div > input:hover {
   }
 
   form > div > div > img {
-    max-width: 100%;
+    max-width: 33%;
+    height: 10%;
   }
   form > div > div> div > img {
-    max-width: 100%;
+    max-width: 120%;
   }
 
   label > img{
-    max-width: 100%;
+    max-width: 120%;
   }
 
   .delivery {
