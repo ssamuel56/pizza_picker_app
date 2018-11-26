@@ -124,15 +124,14 @@ form > div > div > input:hover {
   }
 
   form > div > div > img {
-    max-width: 33%;
-    height: 10%;
+    max-width: 100%;
   }
   form > div > div> div > img {
-    max-width: 120%;
+    max-width: 100%;
   }
 
   label > img{
-    max-width: 120%;
+    max-width: 100%;
   }
 
   .delivery {

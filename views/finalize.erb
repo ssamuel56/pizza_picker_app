@@ -54,8 +54,8 @@
     <h2 class="delivery"><label for="delivery">Delivery</label><input id="delivery" type="radio" name="pickup_delivery" value="delivery"></h2>
     <h2 class="delivery"><label for="more">Add a Pizza</label><input id="more" type="radio" name="pickup_delivery" value="new_pizza"></h2>
   </div>
-  <input type="hidden" name="all_ingredients" value="<%= all_ingredients.join(",")%>"><br><br>
-  <input type="hidden" name="ingredients_array" value="<%= ingredients_array%>"><br><br>
+  <input type="hidden" name="all_ingredients" value="<%= all_ingredients.join(",")%>">
+  <input type="hidden" name="ingredients_array" value="<%= ingredients_array%>"><br>
   <input class="submit" type="submit" value="Continue">
   <input class="submit" type="button" onclick="window.location.href='/'" value="Reset">
 
