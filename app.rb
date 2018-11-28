@@ -63,16 +63,16 @@ post '/checkout' do
     ingredients_array = ingredients_array.split(',')
   end
   all_ingredients.each do |ingredient|
-    if (ingredient == "pepperoni" || ingredient == "sausage" || ingredient == "chicken" || ingredient == "mushrooms" || ingredient == "peppers" || ingredient == "olives") && (params[ingredient.to_sym] == "no")
-      p "On the meats"
-    elsif (ingredient == "thin_crust") && (params[ingredient.to_sym] == "no")
+    if (ingredient == "thin_crust") && (params[ingredient.to_sym] == "no")
       ingredients_array << "pan_crust"
-    elsif (ingredient == "bbq" || ingredient == "ranch") && (params[ingredient.to_sym] == "no")
+    end
+    if (ingredient == "bbq" || ingredient == "ranch") && (params[ingredient.to_sym] == "no")
       ingredients_array << "regular_sauce"
-    elsif (ingredient == "3_cheese") && (params[ingredient.to_sym] == "no")
-      p "on the cheese"
+    end
+    if (ingredient == "3_cheese") && (params[ingredient.to_sym] == "no")
       ingredients_array << "regular_cheese"
-    else
+    end
+    if params[ingredient.to_sym] == "yes" || ingredient == "small" || ingredient == "medium" || ingredient == "large"
       ingredients_array << ingredient
     end
   end
