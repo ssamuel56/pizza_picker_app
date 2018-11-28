@@ -2,7 +2,8 @@ require 'sinatra'
 require_relative 'pizza_price.rb'
 
 get '/' do
-  params[:ingredients_array] ? ingredients_array = params[:ingredients_array] : ingredients_array = ""
+  ingredients_array = params[:ingredients_array] if params[:ingredients_array]
+  ingredients_array = "" if !params[:ingredients_array]
   erb :home, locals: {ingredients_array: ingredients_array}
 end
 
@@ -75,7 +76,6 @@ post '/checkout' do
       ingredients_array << ingredient
     end
   end
-  p ingredients_array
   ingredients_array = ingredients_array.join(",")
   if params[:pickup_delivery] == "new_pizza"
     redirect '/?ingredients_array=' + ingredients_array
